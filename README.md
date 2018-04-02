@@ -48,7 +48,7 @@ query getAllCourse($topic: String!) {
   "topic": "Node.js"
 }
 ```
-**requset to fetch data with aliases & fragments:** 
+## requset to fetch data with aliases & fragments:
 ***request***
 ```
 query getCourseWithFragments($courseID1: Int!, $courseID2: Int!) {
@@ -74,7 +74,7 @@ fragment courseFields on Course {
   "courseID2": 3
 }
 ```
-**mutation requset:** 
+## mutation requset (change author):
 ***request***
 ```
 mutation updateCourseAuthor($id: Int!, $author: String!) {
