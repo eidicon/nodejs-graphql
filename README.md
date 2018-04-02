@@ -1,27 +1,16 @@
-# nodejs+express+graphql app
-based on [`this`][1] blog post
-
-[![CircleCI](https://circleci.com/gh/eidicon/nodejs-graphql/tree/master.svg?style=svg)](https://circleci.com/gh/eidicon/nodejs-graphql/tree/master)
+# nodejs+express+graphql app [![CircleCI](https://circleci.com/gh/eidicon/nodejs-graphql/tree/master.svg?style=svg)](https://circleci.com/gh/eidicon/nodejs-graphql/tree/master)
+this is kind of reminder based on [`this`][1] blog post 
 
 **before moving forward you have check if current packages installed (_latest versions_)**
 - [nodejs][3]
 - [yarn][4]
 
-## to run first stage simply run
-```yarn run server``` 
-
-**proper requset should be:** 
-
+## to run server
 ```
-{
-  message
-}
-```
+yarn run server
+``` 
 
-## stage2
-```yarn run server```
-
-**requset to fetch one course:** 
+## requset to fetch one course:
 ***request***
 ```
 query getSingleCourse($courseID: Int!) {
@@ -31,7 +20,7 @@ query getSingleCourse($courseID: Int!) {
     description
     topic
     url
-   }
+  }
 }
 ```
 ***queryVariables***
@@ -40,12 +29,13 @@ query getSingleCourse($courseID: Int!) {
   "courseID": 1
 }
 ```
-**requset to fetch all courses by topic:** 
+
+## requset to fetch all courses by topic:
 ***request***
 ```
 query getAllCourse($topic: String!) {
-	courses(topic: $topic) {
-  	title
+  courses(topic: $topic) {
+    title
     author
     description
     url
@@ -58,16 +48,16 @@ query getAllCourse($topic: String!) {
   "topic": "Node.js"
 }
 ```
-**requset to fetch data with aliases & fragments:** 
+## requset to fetch data with aliases & fragments:
 ***request***
 ```
 query getCourseWithFragments($courseID1: Int!, $courseID2: Int!) {
-      course1: course(id: $courseID1) {
-             ...courseFields
-      },
-      course2: course(id: $courseID2) {
-            ...courseFields
-      } 
+  course1: course(id: $courseID1) {
+    ...courseFields
+  },
+  course2: course(id: $courseID2) {
+    ...courseFields
+  } 
 }
 fragment courseFields on Course {
   title
@@ -84,7 +74,7 @@ fragment courseFields on Course {
   "courseID2": 3
 }
 ```
-**mutation requset:** 
+## mutation requset (change author):
 ***request***
 ```
 mutation updateCourseAuthor($id: Int!, $author: String!) {
