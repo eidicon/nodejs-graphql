@@ -11,19 +11,24 @@ yarn run server
 ``` 
 
 ## requset to fetch one course:
-|***request***|***queryVariables***|
-|-------------|--------------------|
-|```
-|query getSingleCourse($courseID: Int!) { |{
-|  course(id: $courseID) {                |  "courseID": 1
-|    title                                |}
-|    author                               |
-|    description                          |
-|    topic                                |
-|    url                                  |
-|   }                                     |
-|}                                        | 
-
+***request***
+```
+query getSingleCourse($courseID: Int!) {
+  course(id: $courseID) {
+    title
+    author
+    description
+    topic
+    url
+   }
+}
+```
+***queryVariables***
+```
+{
+  "courseID": 1
+}
+```
 
 ## requset to fetch all courses by topic:
 ***request***
