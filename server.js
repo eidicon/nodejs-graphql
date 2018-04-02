@@ -1,19 +1,12 @@
 const express = require('express')
 const expressGraphql = require('express-graphql')
-const { buildSchema } = require('graphql')
 require('dotenv').config()
 
 // GraphQL schema with Interface Definition Language (IDL)
-const schema = buildSchema(`
-  type Query {
-    message: String
-  }
-`)
+const schema = require('./schema')
 
 // Root resolver
-let root = {
-  message: () => 'Hello World!'
-}
+let root = require('./resolver')
 
 // Createing an express server and a GraphQL endpoint
 const app = express()
