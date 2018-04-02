@@ -20,7 +20,7 @@ query getSingleCourse($courseID: Int!) {
     description
     topic
     url
-   }
+  }
 }
 ```
 ***queryVariables***
@@ -34,8 +34,8 @@ query getSingleCourse($courseID: Int!) {
 ***request***
 ```
 query getAllCourse($topic: String!) {
-	courses(topic: $topic) {
-  	title
+  courses(topic: $topic) {
+    title
     author
     description
     url
@@ -52,12 +52,12 @@ query getAllCourse($topic: String!) {
 ***request***
 ```
 query getCourseWithFragments($courseID1: Int!, $courseID2: Int!) {
-      course1: course(id: $courseID1) {
-             ...courseFields
-      },
-      course2: course(id: $courseID2) {
-            ...courseFields
-      } 
+  course1: course(id: $courseID1) {
+    ...courseFields
+  },
+  course2: course(id: $courseID2) {
+    ...courseFields
+  } 
 }
 fragment courseFields on Course {
   title
