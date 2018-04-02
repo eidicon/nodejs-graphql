@@ -1,11 +1,13 @@
 # nodejs+express+graphql app
 based on [`this`][1] blog post
 
+[![CircleCI](https://circleci.com/gh/eidicon/nodejs-graphql/tree/master.svg?style=svg)](https://circleci.com/gh/eidicon/nodejs-graphql/tree/master)
+
 **before moving forward you have check if current packages installed (_latest versions_)**
 - [nodejs][3]
 - [yarn][4]
 
-## to run first sage simply run**
+## to run first stage simply run**
 ```yarn run server``` 
 
 **proper requset should be:** 
