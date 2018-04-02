@@ -1,28 +1,21 @@
 # nodejs+express+graphql app
-based on [`this`][1] blog post
+this is kind of reminder based on [`this`][1] blog post 
 
-[![CircleCI](https://circleci.com/gh/eidicon/nodejs-graphql/tree/master.svg?style=svg)](https://circleci.com/gh/eidicon/nodejs-graphql/tree/master)
+|***master***|[![CircleCI](https://circleci.com/gh/eidicon/nodejs-graphql/tree/master.svg?style=svg)](https://circleci.com/gh/eidicon/nodejs-graphql/tree/master)|
 
 **before moving forward you have check if current packages installed (_latest versions_)**
 - [nodejs][3]
 - [yarn][4]
 
-## to run first stage simply run
-```yarn run server``` 
-
-**proper requset should be:** 
-
+## to run server
 ```
-{
-  message
-}
-```
+yarn run server
+``` 
 
-## stage2
-```yarn run server```
-
-**requset to fetch one course:** 
-***request***
+## requset to fetch one course:
+|***request***|***queryVariables***|
+|-------------|--------------------|
+|
 ```
 query getSingleCourse($courseID: Int!) {
   course(id: $courseID) {
@@ -34,13 +27,15 @@ query getSingleCourse($courseID: Int!) {
    }
 }
 ```
-***queryVariables***
+|
 ```
 {
   "courseID": 1
 }
 ```
-**requset to fetch all courses by topic:** 
+|
+
+## requset to fetch all courses by topic:
 ***request***
 ```
 query getAllCourse($topic: String!) {
